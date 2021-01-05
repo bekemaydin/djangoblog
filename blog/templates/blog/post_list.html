@@ -9,16 +9,13 @@
         <h1><a href="/">Mehmet Aydın Bekem</a></h1>
     </div>
 
-
-    <div>
-        <p>published: 05.01.2021, 14:14</p>
-        <h2><a href="">İlk Blogum</a></h2>
-        <p>Bu bir deneme yazısı</p>
-
-        <p>published: 05.01.2021, 15:14</p>
-        <h2><a href="">İkinci Blogum</a></h2>
-        <p>Bu bir deneme yazısı2</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 
 </body>
 </html>
